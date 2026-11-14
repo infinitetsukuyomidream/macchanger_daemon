@@ -1,9 +1,9 @@
-# macchanger_daeion
+# macchanger_daemon
 
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](./LICENSE)
-[![Last Commit](https://img.shields.io/github/last-commit/Pushpenderrathore/macchanger_daeion)](https://github.com/Pushpenderrathore/macchanger_daeion/commits)
-[![GitHub stars](https://img.shields.io/github/stars/Pushpenderrathore/macchanger_daeion?style=social)](https://github.com/Pushpenderrathore/macchanger_daeion/stargazers)
-[![Repo size](https://img.shields.io/github/repo-size/Pushpenderrathore/macchanger_daeion)](https://github.com/Pushpenderrathore/macchanger_daeion)
+[![Last Commit](https://img.shields.io/github/last-commit/infinitetsukuyomidream/macchanger_daemon)](https://github.com/infinitetsukuyomidream/macchanger_daemon/commits)
+[![GitHub stars](https://img.shields.io/github/stars/infinitetsukuyomidream/macchanger_daemon?style=social)](https://github.com/infinitetsukuyomidream/macchanger_daemon/stargazers)
+[![Repo size](https://img.shields.io/github/repo-size/infinitetsukuyomidream/macchanger_daemon)](https://github.com/infinitetsukuyomidream/macchanger_daemon)
 
 A small systemd-based utility that randomizes (spoofs) network interface MAC addresses on system boot and can be run periodically via a systemd timer. It uses the well-known `macchanger` utility and is intended for systemd-based Linux distributions (Arch, Debian/Ubuntu, Fedora, etc.).
 
@@ -54,8 +54,8 @@ Table of contents
 
 2. Clone this repository
 ```bash
-git clone https://github.com/Pushpenderrathore/macchanger_daeion.git
-cd macchanger_daeion
+git clone https://github.com/infinitetsukuyomidream/macchanger_daemon.git
+cd macchanger_daemon
 ```
 
 3. Install the script and systemd service
@@ -168,4 +168,4 @@ This project is licensed under the MIT License. See LICENSE for details.
 
 ## Maintainer
 
-Pushpenderrathore — https://github.com/Pushpenderrathore
+infinitetsukuyomidream — https://github.com/infinitetsukuyomidream

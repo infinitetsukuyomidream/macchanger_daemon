@@ -2,12 +2,10 @@
 
 # MAC Address Watcher - Changes MAC address every 30 minutes and on internet reconnection 
 
-VERSION="v1.1.0"
+VERSION="v1.0.0"
 echo "[macchanger-daemon $VERSION] Starting..."
 
-INTERVAL=1800  # 30 minutes 
-CHECK_HOST="1.1.1.1"  # Cloudflare DNS for connectivity check 
-PREV_STATUS=connected 
+INTERVAL=1800 # 30 minutes
 
 
 change_mac() {
@@ -32,21 +30,7 @@ change_mac() {
 last_change_time=0 
 
 while true; do
-     current_time=$(date +%s);
-     # Internet connectivity check
-     ping -c 1 -W 1 "$CHECK_HOST" &>/dev/null
-     if [[ $? -eq 0 ]]; then
-         if [[ "$PREV_STATUS" == "disconnected" ]]; then
-             echo "[✓] Internet reconnected. Triggering MAC change."
-             change_mac
-             last_change_time=$current_time
-         fi
-         PREV_STATUS=connected
-     else
-         echo "[!] Internet seems disconnected..."
-         PREV_STATUS=disconnected
-     fi
-     
+     current_time=$(date +%s);     
 
      # Check for interval-based MAC change
      if (( current_time - last_change_time >= INTERVAL )); then
@@ -54,5 +38,5 @@ while true; do
          change_mac
          last_change_time=$current_time
      fi
-     sleep 5
+     sleep INTERVAL
 done 
