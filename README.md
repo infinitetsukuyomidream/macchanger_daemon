@@ -139,9 +139,6 @@ When run, `./install.sh` it will trigger `macchanger.service` at the system Deam
 - macchanger.service — systemd service unit to run the script at boot (and on-demand).
 - macchanger.timer — optional systemd timer unit to run the service periodically (example).
 - install.sh — convenience installation script (one-shot installer).
-- setup.py / requirements.txt — packaging helpers (if converting to a Python package).
-- macchanger-daemon — optional CLI/entrypoint (if present).
-- CODE_OF_CONDUCT.md — community guidelines.
 - LICENSE — MIT License.
 
 (Adjust names above if your repository differs.)
