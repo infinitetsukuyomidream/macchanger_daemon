@@ -5,7 +5,7 @@
 VERSION="v1.0.0"
 echo "[macchanger-daemon $VERSION] Starting..."
 
-INTERVAL=1800 # 30 minutes
+INTERVAL=3600 # 60 minutes
 
 
 change_mac() {
@@ -32,7 +32,7 @@ while true; do
 
     # Check for interval-based MAC change
     if (( current_time - last_change_time >= INTERVAL )); then
-        echo "[⏰] 30-minute interval reached. Triggering MAC change."
+        echo "[⏰] 60-minute interval reached. Triggering MAC change."
         change_mac
         last_change_time=$current_time
     fi

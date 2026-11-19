@@ -1,18 +1,19 @@
 #!/bin/bash
 
-sudo echo "Optimising Your system...."
+set -euo pipefail
 
-sudo cp change-mac.sh /usr/local/bin/
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 
-sudo cp macchanger.service /etc/systemd/system/
+echo "Installing macchanger service..."
 
-sudo systemctl daemon-reexec
+sudo install -m 0755 "$SCRIPT_DIR/change-mac.sh" /usr/local/bin/change-mac.sh
+sudo install -m 0644 "$SCRIPT_DIR/macchanger.service" /etc/systemd/system/macchanger.service
 
 sudo systemctl daemon-reload
 
 sudo systemctl enable macchanger.service
 
-sudo systemctl start macchanger.service
+sudo systemctl restart macchanger.service
 
-sudo echo "[✔] MAC randomizer service installed and running."
+echo "[+] MAC randomizer service installed and running."
 
